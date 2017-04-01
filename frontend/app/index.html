@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="projectApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Bestie</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.min.css">
+    <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.min.css">
+    <link href="dist/css/flat-ui.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-rating/src/angular-rating.js"></script>
+    <script src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="bower_components/ng-dialog/js/ngDialog.min.js"></script>
+    <link href="bower_components/c3/c3.css" rel="stylesheet" type="text/css">
+    <script src="bower_components/d3/d3.min.js" charset="utf-8"></script>
+    <script src="bower_components/c3/c3.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/c3-angular/c3-angular.js"></script>
+  </head>
+  <body ng-controller="MainController" style="height:100%; overflow:hidden;">
+    <video muted autoplay loop style="float: left; width:auto; height:auto; min-width:100%; min-height:100%">
+    </video>
+    <center class="page-container">
+      <div class="banner"> 
+        <center>
+          <a href="http://www.bestbuy.ca/" target="_blank"><img style="position: relative; top: -13px;" height="75px" src="img/bestbuy.jpg"></a>
+          <a style="text-decoration: none !important;" ui-sref="list"><span class="mainTitle">Bestie</span></a><br>
+          <span class="subTitle">Help to engage Bestbuy customers</span><br>
+        </center>
+      </div>
+      <div class="content" style="opacity:1" ui-view></div>
+    </center>
+  </body>
+</html>

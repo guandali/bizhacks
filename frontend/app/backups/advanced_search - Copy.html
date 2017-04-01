@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Bootstrap -->
+	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<link href="styles/advanced_search.css" rel="stylesheet">
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body ng-controller="Advanced_Search_Controller">
+<h1><center>Advanced Search</center></h1>
+
+<center>
+
+<div id="professor" class="professor">
+	<label for="pName">Professor's Name</label> <input type="text" name="profName"><br> 
+	<br>
+	<label for="pDept">Department</label> <input type="text" name="profName"><br> 
+</div>
+
+</center>
+
+<br>
+
+<center>
+
+<div id="course" class="course">
+	<label for="courseCode">Course Code</label> <input type="text" name="courseCode" placeholder="CPSC"><br> 
+	<br>
+	<label for="courseNum">Course number</label><select name="courseNum">
+													<option value="a">a</option>
+													<option value="b">b</option>
+												</select> <br>
+												
+	<br>
+	<label for="dow">Day of offering</label><select name="dow">
+																	<option value="--">--</option>
+																	<option value="Monday">Monday</option>
+																	<option value="Tuesday">Tuesday</option>
+																	<option value="Wednesday">Wednesday</option>
+																	<option value="Thursday">Thursday</option>
+																	<option value="Friday">Friday</option>
+																	<option value="Saturday">Saturday</option>
+																	<option value="Sunday">Sunday</option>
+												</select> <br>
+	<p>(Day of the week the course is offered)</p>
+	
+	<br>
+	
+	<label for="tod">Time of Day</label>		<select name="tod">
+																	<option value="--">--</option>
+																	<option value="morning">Morning (6am-12pm)</option>
+																	<option value="afternoon">Afternoon (12:01pm-5pm)</option>
+																	<option value="evening">Evening (5:01pm-8pm)</option>
+																	<option value="a_evening">Night (8:01pm-5:59am)</option>
+												</select> <br>
+	<p>(Time of day course begins at)</p>
+
+</div>
+
+</center>
+
+<br>
+
+<div id="buttons" class="buttons">
+<center><button type="button" class="btn btn-primary">Search</button></center>
+<br>
+<center><button type="button" class="btn btn-primary">Cancel</button></center>
+</div>
+
+</body>
+</html>

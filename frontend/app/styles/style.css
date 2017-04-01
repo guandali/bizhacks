@@ -1,0 +1,43 @@
+.banner{
+    margin-bottom: 10px; 
+}
+.content{
+    width: 80%; 
+    /*border: 1px black solid; */
+    overflow: hidden; 
+}
+
+.mainTitle{
+    font-size: 60px;
+    font-family: serif; 
+}
+
+.subTitle{
+    font-style: italic;
+}
+
+.st-sort-ascent:before{
+    content: '\25B2';
+}
+
+.st-sort-descent:before{
+    content: '\25BC';
+}
+
+.page-container{
+    overflow: hidden; 
+    padding: 10px;
+    position:absolute; 
+    background:rgba(255,255,255,0.93);
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0; 
+    width: 70%;
+}
+
+.table-row:hover{
+    background: lightblue !important; 
+    cursor: pointer; 
+}
+
