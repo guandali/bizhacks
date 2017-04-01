@@ -104,7 +104,7 @@
         };
 
         for (var i = 1; i < numsliders; i++) {
-            data.specialization.push({dept: dept[i], rating: $("#slider_" + i).val()});
+            data.specialization.push({dept: dept[i], rating: parseInt($("#slider_" + i).val())});
         }
         console.log(data);
 
@@ -157,8 +157,8 @@
 
     function populateRequests() {
         $.ajax({
-            url: "http://localhost:3000/collections",
-            type: "GET",
+            url: "http://localhost:3000/collections/reqmodel",
+            type: "POST",
             success: function(d) {
                 console.log(d);
             },
