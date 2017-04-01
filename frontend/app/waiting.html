@@ -1,12 +1,16 @@
 
 <div class="row">
     <div class="container-fluid text-center welcome">
-        <h1>Please wait one moment</h1>
+        <h1>Please wait one moment.</h1>
         <h1 class="loading"></h1>
     </div>
 </div>
 
 <script>
+	$(document).ready(function() {
+		responsiveVoice.speak("Please wait one moment.");
+	});
+
     var timer = setTimeout(function() {
         window.location.href='/#/ads'
     }, 4000);
