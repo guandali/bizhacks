@@ -154,4 +154,17 @@
         });
     }
 
+    function populateRequests() {
+        $.ajax({
+            url: "http://localhost:3000/collections",
+            type: "GET",
+            success: function(d) {
+                console.log(d);
+            },
+            error: function(d) {
+                console.log(d);
+            }
+        })
+    }
+
 </script>
