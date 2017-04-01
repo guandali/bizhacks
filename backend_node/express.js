@@ -2,9 +2,10 @@ var express = require('express'),
   mongoskin = require('mongoskin'),
   bodyParser = require('body-parser')
   logger = require('morgan')
+  mongoose = require('mongoose');
   async = require('async'); //Added by lli
 
-
+var port = process.env.PORT || 3000;
 
 
 var app = express()
@@ -12,7 +13,16 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(logger('dev'))
 
-var db = mongoskin.db('mongodb://@localhost:27017/test', {safe:true})
+var db = mongoskin.db('mongodb://@localhost:27017/test', {safe:true});
+
+var mongodbURL = "mongodb://lli-dev:nwhacks@ds021663.mlab.com:21663/nodeproject1"
+var mongooseConn = mongoose.connect(mongodbURL, function(err,db){
+    if (!err){
+        console.log('Connected to MongoDB!');
+    } else{
+        console.dir(err); //failed to connect
+    }
+});
 
 
 app.param('collectionName', function(req, res, next, collectionName){
@@ -59,7 +69,7 @@ app.delete('/collections/:collectionName/:id', function(req, res, next) {
   })
 })
 
-app.listen(3000, function(){
-  console.log('Express server listening on port 3000')
+app.listen(port, function(){
+  console.log('Express server listening on port ' + port);
 })
 
