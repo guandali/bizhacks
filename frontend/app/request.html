@@ -9,7 +9,26 @@
 <div class="row buttons">
     <div class="container-fluid">
         <a href="http://13.93.221.75/channel/general"> <button type="button" class="btn btn-lg btn-block btn-primary">Ask BestBot a Question</button> </a>
-        <a class="btn btn-danger btn-lg btn-block" href="#/waiting" role="button">Ask a Human</a>
-        <!--<button type="button" class="btn btn-danger btn-lg btn-block" id="ask-human">Ask a Human</button>-->
+
+        <!--<a class="btn btn-danger btn-lg btn-block" href="#/waiting" role="button">Ask a Human</a>-->
+        <button type="button" class="btn btn-danger btn-lg btn-block" id="ask-human">Ask a Human</button>
     </div>
  </div>
+
+
+<script>
+    $("#ask-human").click(function() {
+        $.ajax({
+            url: "/newReq",
+            type: "POST",
+            data: {dept: "Computers & Tablets"},
+            success: function (d) {
+                //
+                console.log(d);
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
+    });
+</script>

@@ -1,8 +1,9 @@
 
 <div class="row">
     <div class="container-fluid text-center welcome">
-        <h1>Hello, I'm Bestie</h1>
-        <h2>What can I help you with?</h2>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create" id="create-button">Create Account</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login" id="login-button">Login</button>
+
     </div>
 </div>
 
@@ -14,33 +15,57 @@
                 <h4 class="modal-title">Create Account</h4>
             </div>
             <div class="modal-body">
-                <form data-toggle="validator" role="form" id="updateMovieForm">
+                <form data-toggle="validator" role="form" id="create-form">
                     <div class="form-group">
                         <label for="username" class="control-label">Username</label>
                         <input type="text" class="form-control" id="username" required>
                     </div>
                     <div class="form-group">
-                        <label for="password" class="control-label">Password</label>
-                        <input type="text" pattern="^[1-2]+[0-9]{3}$" maxlength="4" class="form-control" id="password" required>
+                        <label for="inputPassword" class="control-label">Password</label>
+                                <input type="password" data-minlength="6" class="form-control" id="inputPassword" required>
+                                <div class="help-block">Minimum of 6 characters</div>
+                        <label for="inputPassword" class="control-label">Confirm</label>
+
+                        <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" required>
+                                <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <label for="arating" class="control-label">Rating</label>
-                        <select class="selectpicker form-control" id="urating" required>
-                            <option>G</option>
-                            <option>PG</option>
-                            <option>14A</option>
-                            <option>18A</option>
-                            <option>R</option>
-                            <option>A</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="length" class="control-label">Runtime</label>
-                        <input type="text" pattern="^[1-9]+[0-9]*$" maxlength="3" class="form-control" id="ulength" required>
+                        <!--<label class="control-label">Specializations</label>-->
+                        <div id="sliders">
+                            //
+                        </div>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Login</h4>
+            </div>
+            <div class="modal-body">
+                <form data-toggle="validator" role="form" id="login-form">
+                    <div class="form-group">
+                        <label for="luser" class="control-label">Username</label>
+                         <input type="text" class="form-control" id="luser" required>
+                        </div>
+                    <div class="form-group">
+                        <label for="lpassword" class="control-label">Password</label>
+                        <input type="password" class="form-control" id="lpassword" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Login</button>
                     </div>
                 </form>
             </div>
@@ -51,8 +76,83 @@
 
 
 <script>
-    $("#login").click(function () {
+    $(document).ready(function() {
+        $('#create-form').validator();
+        $("#login-form").validator();
+        populateSliders();
+    });
 
-    })
+
+    $("#create").on("hidden.bs.modal", function(){
+        var selector = $("#create-form");
+        selector.validator("destroy");
+        $(this).find("input, select").not(".btn").val(""); //selects all text inputs except for inputs disguised as buttons and clears
+        $(this).find(".slider").slider("refresh");
+        selector.validator("update"); //tell bootstrap form validator that inputs have changed
+    });
+
+    $("#login").on("hidden.bs.modal", function(){
+        var selector = $("#login-form");
+        selector.validator("destroy");
+        $(this).find("input, select").not(".btn").val(""); //selects all text inputs except for inputs disguised as buttons and clears
+        selector.validator("update"); //tell bootstrap form validator that inputs have changed
+    });
+
+    $("#create-form").on("submit", function() {
+        data = {
+            login: $("#username").val(),
+            pwd: $("#inputPassword").val(),
+            specialization: []
+        };
+
+        for (var i = 1; i < numsliders; i++) {
+            data.specialization.push({dept: dept[i], rating: $("#slider_" + i).val()});
+        }
+        console.log(data);
+
+        $.ajax({
+            url: "/newEmployee",
+            type: "POST",
+            data: data,
+            success: function (d) {
+                //
+                console.log(d);
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
+    });
+
+    var numsliders = 0;
+    var dept = [];
+    function populateSliders() {
+        var selector = $("#sliders");
+        selector.empty();
+        $.ajax({
+            url: "https://msi.bbycastatic.ca/mobile-si/si/catalog?lang=en",
+            type: "GET",
+            success: function (d) {
+                console.log(d);
+                var groupsArray = d.si.response.groups;
+                for (var i = 0; i < groupsArray.length; i++) {
+//                    console.log(groupsArray[i].name);
+//                    selector.append("<p>" + groupsArray[i].name + "</p>")
+                    selector.append("<div class='form-group'><label>" + groupsArray[i].name + "</label><div><input type='text' class='span2 slider' " +
+                            "data-slider-step='1' id='slider_" + numsliders++ + "'/></div></div>");
+                    dept.push(groupsArray[i].name);
+                }
+                for (var j = 0; j < numsliders; j++) {
+                    var slider = $("#slider_" + j);
+                    slider.slider({
+                        "min": 0,
+                        "max": 5,
+                        "value": 0
+                    });
+                    slider.slider("refresh");
+                }
+            }
+        });
+    }
 
 </script>
