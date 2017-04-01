@@ -1,4 +1,3 @@
-
 <div class="row">
     <div class="container-fluid text-center welcome">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create" id="create-button">Create Account</button>
@@ -123,9 +122,11 @@
         });
     });
 
-    var numsliders = 0;
-    var dept = [];
+    var numsliders;
+    var dept;
     function populateSliders() {
+	dept = [];
+	numsliders = 0;
         var selector = $("#sliders");
         selector.empty();
         $.ajax({
@@ -135,8 +136,8 @@
                 console.log(d);
                 var groupsArray = d.si.response.groups;
                 for (var i = 0; i < groupsArray.length; i++) {
-//                    console.log(groupsArray[i].name);
-//                    selector.append("<p>" + groupsArray[i].name + "</p>")
+//                  console.log(groupsArray[i].name);
+//                  selector.append("<p>" + groupsArray[i].name + "</p>")
                     selector.append("<div class='form-group'><label>" + groupsArray[i].name + "</label><div><input type='text' class='span2 slider' " +
                             "data-slider-step='1' id='slider_" + numsliders++ + "'/></div></div>");
                     dept.push(groupsArray[i].name);
