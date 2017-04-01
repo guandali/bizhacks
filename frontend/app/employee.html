@@ -1,8 +1,19 @@
-<div class="row">
-    <div class="container-fluid text-center welcome">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create" id="create-button">Create Account</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login" id="login-button">Login</button>
+<!--<div class="row">-->
+    <!--<div class="container-fluid text-center welcome">-->
+        <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create" id="create-button">Create Account</button>-->
+        <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login" id="login-button">Login</button>-->
 
+    <!--</div>-->
+<!--</div>-->
+<div class="row">
+    <div class="container-fluid" id="query-table-container">
+        <table class="table query-table" id="table-rows">
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Department</th>
+            </tr>
+        </table>
     </div>
 </div>
 
@@ -78,6 +89,12 @@
         $("#login-form").validator();
         populateSliders();
         populateRequests();
+    });
+
+    $("#query-table-container").click(function (){
+        $("#table-rows > tbody > tr").click(function () {
+            $(this).remove();
+        });
     });
 
 
@@ -156,16 +173,59 @@
     }
 
     function populateRequests() {
-        $.ajax({
-            url: "http://localhost:3000/collections/reqmodel",
-            type: "POST",
-            success: function(d) {
-                console.log(d);
-            },
-            error: function(d) {
-                console.log(d);
-            }
-        })
+//        $.ajax({
+//            url: "http://localhost:3000/collections/reqmodel",
+//            type: "POST",
+//            success: function(d) {
+//                console.log(d);
+//            },
+//            error: function(d) {
+//                console.log(d);
+//            }
+//        })
+
+        (function loop() {
+            var rand = getRandomInt(3000, 8000);
+            setTimeout(function() {
+                populate();
+                loop();
+            }, rand);
+        }());
     }
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function populate() {
+        var color= ["#6fdc6f", "#98e698","#c1f0c1", "#eafaea", "#ffffff"]; //most specialized (5), //2nd most (4), //not at all (0)
+        var selector = $("#table-rows");
+        var chosencolor;
+        var chosendate = new Date();
+//        console.log(chosendate);
+        var datesplit = chosendate.toString().split(" ");
+        var date = datesplit[0] + " " + datesplit[1] + " " + datesplit[2] + " " + datesplit[3];
+        var time = datesplit[4];
+        var chosendept = dept[getRandomInt(0, dept.length - 1)];
+        if (chosendept == "Computers & Tablets") {
+            chosencolor = color[0];
+        } else if (chosendept == "Smart Home") {
+            chosencolor = color[1];
+        } else if (chosendept == "Video Games") {
+            chosencolor = color[1];
+        } else if (chosendept == "Best Buy Mobile") {
+            chosencolor = color[2];
+        } else if (chosendept == "Wearable Technology") {
+            chosencolor = color[3];
+        } else if (chosendept == "Cameras & Camcorders") {
+            chosencolor = color[2];
+        }
+        else {
+            chosencolor = color[4];
+        }
+        selector.append("<tr style='background-color: " + chosencolor + ";'><td>" + date + "</td><td>" + time + "</td><td>" + chosendept + "</td></tr>");
+    }
+
+
 
 </script>
