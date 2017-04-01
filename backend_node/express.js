@@ -127,7 +127,7 @@ app.param('newEmployee', function(req, res, next){
 app.post('/newEmployee', function(req, res) {
   console.log(JSON.stringify(req.body));
 
-  var dept_arr;
+  var dept_arr = [];
 
 for (i = 0; i< req.body.specialization.length ; i++) {
   var _dept = req.body.specialization[i][0]

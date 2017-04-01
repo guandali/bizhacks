@@ -27,11 +27,11 @@
 <script>
     $("#ask-human").click(function() {
         $.ajax({
-            url: "/newReq",
+            url: "http://localhost:3000/newReq",
             type: "POST",
-            data: {dept: "Computers & Tablets"},
+            data: {dept: "Computers & Tablets", canceled: false},
             success: function (d) {
-                //
+                window.location.href = "/#/waiting"
                 console.log(d);
             },
             error: function(e) {
