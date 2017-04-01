@@ -1,33 +1,32 @@
 
 <div class="row">
-    <div class="container-fluid text-center">
-        <!--<p>Test</p>-->
+
+    <div class="container-fluid text-center welcome">
+	    <h1>Our nearest agent will be with you shortly.</br>
+		We thank you once again for your patience</h1></br>
+        <img src="img/promo.png" />
     </div>
 </div>
 
 <div class="row buttons">
     <div class="container-fluid">
-        <!--<button class="btn btn-default" type="submit" id="get">Test Get</button>-->
-        <button class="btn btn-lg btn-danger btn-block" id="cancel" type="submit">Cancel</button>
+        <a class="btn btn-danger btn-lg btn-block" href="#/request" role="button">Cancel Request</a>
     </div>
 </div>
 
 <script>
-//    $("#get").click(function() {
-//        $.ajax({
-//            url: "https://msi.bbycastatic.ca/mobile-si/si/catalog?lang=en",
-//            type: "GET",
-//            success: function (d) {
-//                console.log(d);
-//            }
-//        });
-//    });
-
     $("#cancel").click(function() {
         //cancel request
 
         //on success
         window.location.href = '/#/request';
-    })
+    });
+
+
+
+	$(document).ready(function() {
+		responsiveVoice.speak("Our nearest agent will be with you shortly, we thank you once again for your patience.");
+	});
+
 
 </script>

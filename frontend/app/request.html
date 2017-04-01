@@ -1,17 +1,25 @@
 
 <div class="row">
     <div class="container-fluid text-center welcome">
-        <h1>Hello, I'm Bestie</h1>
-        <h2>What can I help you with?</h2>
+        <h1>Hello, my name is Bestie.</h1>
+        <h2>What can I help you with today?</h2>
     </div>
 </div>
 
+ <script>
+	$(document).ready(function() {
+		responsiveVoice.speak("Hello, my name is Bestie, what can I help you with today?");
+	});
+</script>
+
 <div class="row buttons">
     <div class="container-fluid">
+
         <a href="http://13.93.221.75/channel/general"> <button type="button" class="btn btn-lg btn-block btn-primary">Ask BestBot a Question</button> </a>
 
         <!--<a class="btn btn-danger btn-lg btn-block" href="#/waiting" role="button">Ask a Human</a>-->
         <button type="button" class="btn btn-danger btn-lg btn-block" id="ask-human">Ask a Human</button>
+
     </div>
  </div>
 

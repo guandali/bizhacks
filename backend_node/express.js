@@ -11,6 +11,7 @@ var favicon = require('serve-favicon');
 
 var app = express()
 
+
 // var routes = require('./routes/index');
 //         var users = require('./routes/users');
 
@@ -105,7 +106,6 @@ app.get('/', function(req, res, next) {
 })
 
 // test route to make sure everything is working 
-// (accessed at GET http://localhost:8000/api)
 app.get('/larry', function(req, res) {
     res.json({ message: 'too much larry!' });   
 });
@@ -118,6 +118,7 @@ app.param('collectionName', function(req, res, next, collectionName){
   return next()
 })
 
+
 // newEmployeemodels
 app.param('newEmployee', function(req, res, next){
   return next()
@@ -126,7 +127,17 @@ app.param('newEmployee', function(req, res, next){
 app.post('/newEmployee', function(req, res) {
   console.log(JSON.stringify(req.body));
 
-   var newEmployee = new ReqModel({login: req.body.login, pwd: req.body.pwd, specialization: req.body.specialization});
+  var dept_arr;
+
+for (i = 0; i< req.body.specialization.length ; i++) {
+  var _dept = req.body.specialization[i][0]
+  var _rating = req.body.specialization[i][1]
+  
+  var newDept = new DeptModel({dept: _dept, rating: _rating})
+
+  dept_arr.push(newDept)
+}
+   var newEmployee = new ReqModel({login: req.body.login, pwd: req.body.pwd, specialization: dept_arr});
 
    newEmployee.save(function (err) {
      if (err) {
