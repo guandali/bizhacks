@@ -1,0 +1,36 @@
+.welcome{
+    margin-top: 75px;
+    color: white;
+}
+
+.header {
+    padding: 20px;
+    background-color: #003b64;
+    width: 100%;
+}
+
+.buttons {
+    margin-top: 75px;
+}
+
+.loading:after {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    -webkit-animation: ellipsis steps(4,end) 1100ms infinite;
+    animation: ellipsis steps(4,end) 1100ms infinite;
+    content: "\2026"; /* ascii code for the ellipsis character */
+    width: 0px;
+}
+
+@keyframes ellipsis {
+    to {
+        width: 50px;
+    }
+}
+
+@-webkit-keyframes ellipsis {
+    to {
+        width: 50px;
+    }
+}

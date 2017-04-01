@@ -1,0 +1,22 @@
+
+<div class="row">
+    <div class="container-fluid text-center">
+
+    </div>
+</div>
+
+<div class="row buttons">
+    <div class="container-fluid">
+        <a class="btn btn-danger btn-lg btn-block" href="#/waiting" role="button">Cancel Request</a>
+    </div>
+</div>
+
+<script>
+    $.ajax({
+        url: "/",
+        type: "POST",
+        success: function () {
+            window.location.replace("/");
+        }
+    });
+</script>

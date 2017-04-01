@@ -116,16 +116,26 @@ app.config(function($routeProvider, $stateProvider, $urlRouterProvider) {
         url: '/list',
         templateUrl: "list.html"
     })
+        .state('details', {
+            url: '/details?courseId',
+            templateUrl: "details.html",
+            controller: "MainController"
+        })
+        .state('request', {
+            url: '/request',
+            templateUrl: "request.html",
+            controller: "MainController"
+        })
+        .state('waiting', {
+            url: '/waiting',
+            templateUrl:"waiting.html",
+            controller: "MainController"
+        })
+        .state('ads', {
+            url: '/ads',
+            templateUrl:"info.html",
+            controller: "MainController"
+        })
 
-    .state('details', {
-        url: '/details?courseId',
-        templateUrl: "details.html",
-        controller: "MainController"
-    })
-    .state('request', {
-        url: '/request',
-        templateUrl: "request.html",
-        controller: "MainController"
-    })
 
 });
