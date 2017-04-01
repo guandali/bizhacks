@@ -1,0 +1,51 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start' ]
+2 info using npm@3.10.10
+3 info using node@v6.10.0
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle angular-phonecat@0.0.0~prestart: angular-phonecat@0.0.0
+6 verbose lifecycle angular-phonecat@0.0.0~prestart: unsafe-perm in lifecycle true
+7 verbose lifecycle angular-phonecat@0.0.0~prestart: PATH: c:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;c:\Users\Anthony\nwHack\azninvasion\frontend\node_modules\.bin;c:\Users\Anthony\bin;.;C:\Program Files (x86)\Git\local\bin;C:\Program Files (x86)\Git\mingw\bin;C:\Program Files (x86)\Git\bin;c:\tools\ruby23\bin;c:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;c:\Program Files (x86)\Common Files\NetSarang;c:\Program Files\Java\jdk1.7.0_71\bin;C:\Program Files (x86)\Git\cmd;c:\Users\Anthony\AppData\Local\Android\sdk\platform-tools;c:\Users\Anthony\AppData\Local\Android\sdk\tools;c:\windows\system32;c:\windows;c:\windows\System32\Wbem;c:\Program Files\apache-ant-1.9.6\bin;c:\Program Files\MATLAB\MATLAB Production Server\R2015a\runtime\win64;c:\Program Files\MATLAB\MATLAB Production Server\R2015a\bin;c:\Program Files\MATLAB\MATLAB Production Server\R2015a\polyspace\bin;c:\Program Files (x86)\PuTTY\;c:\wamp\bin\php\php5.5.12;c:\ProgramData\ComposerSetup\bin;c:\wamp\bin\php\php5.5.12;c:\windows\System32\WindowsPowerShell\v1.0\;c:\ProgramData\chocolatey\bin;c:\Program Files (x86)\Skype\Phone\;c:\Program Files\nodejs\;c:\Users\Anthony\AppData\Local\Programs\Python\Python35-32\Scripts\;c:\Users\Anthony\AppData\Local\Programs\Python\Python35-32\;c:\users\anthony\appdata\local\enthought\canopy\user\scripts;c:\Program Files (x86)\Microsoft VS Code\bin;c:\Users\Anthony\AppData\Local\Enthought\Canopy\User;c:\Users\Anthony\AppData\Local\Enthought\Canopy\User\Scripts;c:\Users\Anthony\AppData\Roaming\Composer\vendor\bin;c:\Users\Anthony\AppData\Roaming\npm
+8 verbose lifecycle angular-phonecat@0.0.0~prestart: CWD: c:\Users\Anthony\nwHack\azninvasion\frontend
+9 silly lifecycle angular-phonecat@0.0.0~prestart: Args: [ '/d /s /c', 'npm install' ]
+10 silly lifecycle angular-phonecat@0.0.0~prestart: Returned: code: 0  signal: null
+11 info lifecycle angular-phonecat@0.0.0~start: angular-phonecat@0.0.0
+12 verbose lifecycle angular-phonecat@0.0.0~start: unsafe-perm in lifecycle true
+13 verbose lifecycle angular-phonecat@0.0.0~start: PATH: c:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;c:\Users\Anthony\nwHack\azninvasion\frontend\node_modules\.bin;c:\Users\Anthony\bin;.;C:\Program Files (x86)\Git\local\bin;C:\Program Files (x86)\Git\mingw\bin;C:\Program Files (x86)\Git\bin;c:\tools\ruby23\bin;c:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;c:\Program Files (x86)\Common Files\NetSarang;c:\Program Files\Java\jdk1.7.0_71\bin;C:\Program Files (x86)\Git\cmd;c:\Users\Anthony\AppData\Local\Android\sdk\platform-tools;c:\Users\Anthony\AppData\Local\Android\sdk\tools;c:\windows\system32;c:\windows;c:\windows\System32\Wbem;c:\Program Files\apache-ant-1.9.6\bin;c:\Program Files\MATLAB\MATLAB Production Server\R2015a\runtime\win64;c:\Program Files\MATLAB\MATLAB Production Server\R2015a\bin;c:\Program Files\MATLAB\MATLAB Production Server\R2015a\polyspace\bin;c:\Program Files (x86)\PuTTY\;c:\wamp\bin\php\php5.5.12;c:\ProgramData\ComposerSetup\bin;c:\wamp\bin\php\php5.5.12;c:\windows\System32\WindowsPowerShell\v1.0\;c:\ProgramData\chocolatey\bin;c:\Program Files (x86)\Skype\Phone\;c:\Program Files\nodejs\;c:\Users\Anthony\AppData\Local\Programs\Python\Python35-32\Scripts\;c:\Users\Anthony\AppData\Local\Programs\Python\Python35-32\;c:\users\anthony\appdata\local\enthought\canopy\user\scripts;c:\Program Files (x86)\Microsoft VS Code\bin;c:\Users\Anthony\AppData\Local\Enthought\Canopy\User;c:\Users\Anthony\AppData\Local\Enthought\Canopy\User\Scripts;c:\Users\Anthony\AppData\Roaming\Composer\vendor\bin;c:\Users\Anthony\AppData\Roaming\npm
+14 verbose lifecycle angular-phonecat@0.0.0~start: CWD: c:\Users\Anthony\nwHack\azninvasion\frontend
+15 silly lifecycle angular-phonecat@0.0.0~start: Args: [ '/d /s /c', 'http-server ./app -a localhost -p 8000 -c-1' ]
+16 silly lifecycle angular-phonecat@0.0.0~start: Returned: code: 3221225786  signal: null
+17 info lifecycle angular-phonecat@0.0.0~start: Failed to exec start script
+18 verbose stack Error: angular-phonecat@0.0.0 start: `http-server ./app -a localhost -p 8000 -c-1`
+18 verbose stack Exit status 3221225786
+18 verbose stack     at EventEmitter.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:255:16)
+18 verbose stack     at emitTwo (events.js:106:13)
+18 verbose stack     at EventEmitter.emit (events.js:191:7)
+18 verbose stack     at ChildProcess.<anonymous> (c:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:40:14)
+18 verbose stack     at emitTwo (events.js:106:13)
+18 verbose stack     at ChildProcess.emit (events.js:191:7)
+18 verbose stack     at maybeClose (internal/child_process.js:877:16)
+18 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+19 verbose pkgid angular-phonecat@0.0.0
+20 verbose cwd c:\Users\Anthony\nwHack\azninvasion\frontend\app
+21 error Windows_NT 6.3.9600
+22 error argv "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+23 error node v6.10.0
+24 error npm  v3.10.10
+25 error code ELIFECYCLE
+26 error angular-phonecat@0.0.0 start: `http-server ./app -a localhost -p 8000 -c-1`
+26 error Exit status 3221225786
+27 error Failed at the angular-phonecat@0.0.0 start script 'http-server ./app -a localhost -p 8000 -c-1'.
+27 error Make sure you have the latest version of node.js and npm installed.
+27 error If you do, this is most likely a problem with the angular-phonecat package,
+27 error not with npm itself.
+27 error Tell the author that this fails on your system:
+27 error     http-server ./app -a localhost -p 8000 -c-1
+27 error You can get information on how to open an issue for this project with:
+27 error     npm bugs angular-phonecat
+27 error Or if that isn't available, you can get their info via:
+27 error     npm owner ls angular-phonecat
+27 error There is likely additional logging output above.
+28 verbose exit [ 1, true ]
