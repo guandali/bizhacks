@@ -1,4 +1,3 @@
-
 <div class="row">
     <div class="container-fluid text-center welcome">
         <h1>Hello, my name is Bestie.</h1>
@@ -6,33 +5,26 @@
     </div>
 </div>
 
- <script>
-	$(document).ready(function() {
-		responsiveVoice.speak("Hello, my name is Bestie, what can I help you with today?");
-	});
-</script>
-
 <div class="row buttons">
     <div class="container-fluid">
-
-        <a href="http://13.93.221.75/channel/general"> <button type="button" class="btn btn-lg btn-block btn-primary">Ask BestBot a Question</button> </a>
-
+        <a href="http://13.93.221.75/channel/general"> <button type="button" class="btn btn-lg btn-block btn-primary">I just got a quick question.</button> </a>
         <!--<a class="btn btn-danger btn-lg btn-block" href="#/waiting" role="button">Ask a Human</a>-->
-        <button type="button" class="btn btn-danger btn-lg btn-block" id="ask-human">Ask a Human</button>
-
+        <a href="#/waiting"><button type="button" class="btn btn-danger btn-lg btn-block" id="ask-human">I'd like to request a sales representative.</button></a>
     </div>
  </div>
 
-
 <script>
+	$(document).ready(function() {
+		responsiveVoice.speak("Hello, my name is Bestie, what can I help you with today?");
+	});
+	
     $("#ask-human").click(function() {
         $.ajax({
             url: "http://localhost:3000/newReq",
             type: "POST",
-            data: {dept: "Computers & Tablets", canceled: false},
-            success: function (d) {
-                window.location.href = "/#/waiting"
-                console.log(d);
+            data: {dept: "Computers & Tablet Devices", canceled: false},
+            success: function () {
+				// takes a while to finish
             },
             error: function(e) {
                 console.log(e);
