@@ -34,3 +34,7 @@
         width: 50px;
     }
 }
+
+.right {
+    float:right;
+}

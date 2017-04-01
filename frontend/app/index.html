@@ -26,6 +26,8 @@
     <script src="bower_components/c3/c3.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/c3-angular/c3-angular.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
   </head>
   <body ng-controller="MainController" style="background-color: #4795d8">
     <!--<video muted autoplay loop style="float: left; width:auto; height:auto; min-width:100%; min-height:100%">-->
@@ -45,6 +47,14 @@
           <a class="navbar-brand" href="#">
             <img src="img/main-logo.svg" width="100px"/>
           </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="right">
+            <!--<li><a href="#" id="login" style="display:none;">Login</a></li>-->
+            <!--<li><a href="#" id="create" style="display:none;">Create</a></li>-->
+              <li><a href="#" id="login">Login</a></li>
+              <li><a href="#" id="create">Create</a></li>
+          </ul>
         </div>
       </div>
     </nav>
