@@ -1,22 +1,26 @@
 
 <div class="row">
     <div class="container-fluid text-center">
-
+        <p>Test</p>
     </div>
 </div>
 
 <div class="row buttons">
     <div class="container-fluid">
+        <button class="btn btn-default" type="submit" id="get">Test Get</button>
         <a class="btn btn-danger btn-lg btn-block" href="#/waiting" role="button">Cancel Request</a>
     </div>
 </div>
 
 <script>
-    $.ajax({
-        url: "/",
-        type: "POST",
-        success: function () {
-            window.location.replace("/");
-        }
+    $("#get").click(function() {
+        $.ajax({
+            url: "https://msi.bbycastatic.ca/mobile-si/si/catalog?lang=en",
+            type: "GET",
+            success: function (d) {
+                console.log(d);
+            }
+        });
     });
+
 </script>

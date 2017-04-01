@@ -136,6 +136,11 @@ app.config(function($routeProvider, $stateProvider, $urlRouterProvider) {
             templateUrl:"info.html",
             controller: "MainController"
         })
+        .state('employee', {
+            url: '/employee',
+            templateUrl:"employee.html",
+            controller: "MainController"
+        })
 
 
 });
